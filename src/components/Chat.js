@@ -78,7 +78,9 @@ const Chat = () => {
         session.setItem('sessionDatoFinal', JSON.stringify(appState));
 
         // 
-        createUser({ variables: { nombre , segundo , paterno, materno, fechaNacimiento:`${dia} ${mes} ${anio}`, email, telefono:celular} });
+        
+        const crear = ( createUser({ variables: { nombre , segundo , paterno, materno, fechaNacimiento:`${dia} ${mes} ${anio}`, email, telefono:celular} }));
+        
     }
     return (
         <div className="row col-md-12 col-lg-8 px-0 bg-floralwhite">
