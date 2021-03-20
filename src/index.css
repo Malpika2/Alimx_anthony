@@ -2,5 +2,36 @@ body{
     padding: 80px;
 }
 .bg-pink{
-    background-color: pink;
+    background-color: #f49bd1;
+}
+.bg-lightgray{
+    background-color: #d3d3d36e;
+}
+.bg-floralwhite{
+    background-color: floralwhite;
+}
+.img-fluid80{
+    height: auto;
+    width: 80%;
+}
+input,select{
+    background: none !important; 
+    height: 60px;
+    margin-bottom: 10px;
+}
+.divPreguntas{
+    background: beige;
+    border: 2px solid #0000004f;
+    margin-bottom: 10px;
+}
+.cuadroRosa{
+    border-radius: 20px;
+    margin: 10px 0px 10px 32%;
+    padding: 10px;
+    width: 60%;
+}
+button:hover{
+    background-color:rgba(224, 7, 109, 0.849);
+    color:white !important;
+    transition: 1s;
 }

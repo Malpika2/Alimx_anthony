@@ -1,9 +1,13 @@
 import React from 'react'
 
-const CuadroRosa = ({nombres:{nombre, segundo, paterno, materno}}) => {
+const CuadroRosa = ({data}) => {
     return (
-        <div className="bg-pink col-8">
-            <p>{`${nombre} ${segundo} ${paterno} ${materno}`}</p>
+        <div className="bg-pink col-12 cuadroRosa">
+                {
+                    data.map(element => {
+                      return  <p key={element}>{element} </p>;
+                    })
+                }
         </div>
     )
 }

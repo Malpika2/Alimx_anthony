@@ -1,32 +1,33 @@
-import React, {useState} from 'react'
-import CuadroRosa from './CuadroRosa'
+import React from 'react';
+import CuadroRosa from './CuadroRosa';
 
 
-const Nombre = () => {
+const Nombre = ({nombres, dispatch}) => {
 
-    const [nombres, setNombres] = useState({
-        nombre:'',
-        segundo:'',
-        paterno:'',
-        materno:''
-    });
     const {nombre, segundo, paterno, materno } = nombres;
+
     const  handleChange = ({target:{value,id}}) => {
-        console.log(id)
-        setNombres({...nombres,[id]:value})
+
+        const action = {
+            type: 'actualizarNombres',
+            payload: {...nombres,[id]:value}
+        }
+        dispatch(action);
+        
     }
-    console.log(nombres);
     return (
-        <div className="col-8">
-            <h3 className="text-bold">¿Cual es tu nombre?</h3>
+        <>
+        <div className="col-8 divPreguntas">
+            <h4 className="text-bold">¿Cual es tu nombre?</h4>
             <input id="nombre" type="text" className="form-control" placeholder="Nombre" defaultValue={nombre} onChange={ handleChange }/>
             <input id="segundo" type="text" className="form-control" placeholder="Segundo nombre" defaultValue={segundo}  onChange={ handleChange }/>
             <input id="paterno" type="text" className="form-control" placeholder="Apellido paterno" defaultValue={paterno}  onChange={ handleChange }/>
             <input id="materno" type="text" className="form-control" placeholder="Apellido materno" defaultValue={materno}  onChange={ handleChange }/>
-            <CuadroRosa nombres={nombres} /> 
-          
         </div>
+            { (nombre ||segundo ||paterno || materno) && <CuadroRosa className="cuadroRosa" data={[`${ nombre } ${ segundo } ${ paterno } ${ materno }`]} /> }
+        </>
+        
     )
 }
 
-export default Nombre
+export default Nombre;
